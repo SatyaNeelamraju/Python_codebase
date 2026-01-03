@@ -1,0 +1,11 @@
+git add . - to include in what file names to be committed
+git commit -m "Initial commit"
+git branch
+git checkout main
+git rm path_to_file
+git status 
+git commit -m "comment"
+git push origin main
+git switch -c feature/my-feature
+git branch -m oops_classes - Rename branch
+git log -- press q to exit from log

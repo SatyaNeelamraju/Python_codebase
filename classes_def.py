@@ -1,3 +1,4 @@
+#simple class definition 
 class CircleArea_1:
     
     def __init__(self,radius):
@@ -6,8 +7,3 @@ class CircleArea_1:
 
     def area(self):
         return self.pi * self.radius ** 2
-        
-
-obj=CircleArea_1(2)
-a=obj.area()
-print(a)
