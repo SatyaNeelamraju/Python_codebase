@@ -58,6 +58,8 @@ class childcl(even_nos):
 # obje.finder()
 # obje1.finder()
 
+# works as expected when class attribute is not called with class.attribute 
+
 class even_nos:
     counter=0
     def __init__(self,num):
@@ -74,8 +76,10 @@ class childcl(even_nos):
     counter=0
 
 obje=even_nos(4)
+obje2=even_nos(2)
 obje1=childcl(3)
 obje.finder()
+obje2.finder()
 obje1.finder()
         
 
