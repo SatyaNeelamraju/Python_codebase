@@ -83,6 +83,12 @@ obje2.finder()
 obje1.finder()
         
 
+#| Expression              | What it means               | Use case               |
+#| ----------------------- | --------------------------- | ---------------------- |
+#| `self.class_attr`       | Read attribute via instance | Reading values         |112
+#| `self.class_attr += 1`  | Creates instance attr       | ⚠️ Usually a bug       |
+#| `type(self).class_attr` | Access class attribute      | ✅ Correct for counters |
+#| `type(self.class_attr)` | Type of the value           | ❌ Not for class access |
 
 
     
