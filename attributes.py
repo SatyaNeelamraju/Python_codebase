@@ -14,30 +14,6 @@ class demo:
 
 #Alternative use of class attribute in inheritance
 
-
-class premium_customers:
-    disc = 0.1
-    def __init__(self,price):
-        self.price = price
-        print(self.price)
-    def calc_disc(self):
-        self.price=self.price-(self.price*(self.disc))  
-        #python checks for if disc value is from instance attributes if not from class 
-    #attributes then the super class 
-
-        print(self.price)
-
-class normal_customers(premium_customers):
-    disc=0.05
-
-# obj1= premium_customers(1000)
-# obj1.calc_disc()
-# obj2=normal_customers(1000)
-# obj2.calc_disc()
-
-#updating class atrribute 
-# updating counter by 1 if it is even and 2 if it is odd but the counter is updated by 3 when it is odd 
-
 class even_nos:
     counter=0
     def __init__(self,num):
@@ -45,31 +21,9 @@ class even_nos:
 
     def finder(self):
         if self.num %2 ==0:    
-            even_nos.counter+=1
+            type(self).counter+=1 #type(self) can be replaced with self
         else:
-            even_nos.counter+=2    
-        print(even_nos.counter)
-        
-class childcl(even_nos):
-    counter=0
-
-# obje=even_nos(4)
-# obje1=childcl(3)
-# obje.finder()
-# obje1.finder()
-
-# works as expected when class attribute is not called with class.attribute 
-
-class even_nos:
-    counter=0
-    def __init__(self,num):
-        self.num=num
-
-    def finder(self):
-        if self.num %2 ==0:    
-            type(self).counter+=1
-        else:
-            type(self).counter+=2    
+            type(self).counter+=2  #type(self) can be replaced with self  
         print(self.counter)
         
 class childcl(even_nos):
@@ -80,17 +34,36 @@ obje2=even_nos(2)
 obje1=childcl(3)
 obje.finder()
 obje2.finder()
-obje1.finder()
-        
+obje1.finder()        
+
+print(even_nos.__dict__)
 
 #| Expression              | What it means               | Use case               |
 #| ----------------------- | --------------------------- | ---------------------- |
 #| `self.class_attr`       | Read attribute via instance | Reading values         |112
 #| `self.class_attr += 1`  | Creates instance attr       | ⚠️ Usually a bug       |
-#| `type(self).class_attr` | Access class attribute      | ✅ Correct for counters |
+#| `type(self).class_attr` | Access class attribute      | ✅ Correct for counters |122
 #| `type(self.class_attr)` | Type of the value           | ❌ Not for class access |
 
 
+# Key Difference: type(self).counter vs. self.counter
+
+# type(self) refers to the class of the instance (e.g., even_nos for all instances in the test). So type(self).
+# counter accesses and modifies the class-level attribute counter,which is shared by all instances of that class (and subclasses, unless overridden).
+# self.counter creates instance attributes, which are unique to each object. Changes don't affect other instances or "carry over."
     
         
+# instance attributes 
+
+class attr:
+    def __init__(self,tmp):
+        self.temp=tmp
+    
+    def add(self):
+        self.result=self.temp+1
+        print(self.result)
+
+o=attr(2)
+o.add()
+
 
