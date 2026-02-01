@@ -1,4 +1,5 @@
 # Simple use of class attribute 
+
 class demo:
     total = 600
     def __init__(self,marks):
@@ -29,14 +30,13 @@ class even_nos:
 class childcl(even_nos):
     counter=0
 
-obje=even_nos(4)
-obje2=even_nos(2)
-obje1=childcl(3)
-obje.finder()
-obje2.finder()
-obje1.finder()        
-
-print(even_nos.__dict__)
+if __name__=="__main__":
+    obje=even_nos(4)
+    obje2=even_nos(2)
+    obje1=childcl(3)
+    obje.finder()
+    obje2.finder()
+    obje1.finder()        
 
 #| Expression              | What it means               | Use case               |
 #| ----------------------- | --------------------------- | ---------------------- |
@@ -63,7 +63,8 @@ class attr:
         self.result=self.temp+1
         print(self.result)
 
-o=attr(2)
-o.add()
+if __name__=="__main__":
+    o=attr(2)
+    o.add()
 
 
