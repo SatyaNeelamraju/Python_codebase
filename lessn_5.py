@@ -40,6 +40,7 @@ def double(i):
 # j=int((input("enter a num:")))
 # double(j)
 
+################################## calculate intrest for 4 years ########################################
 def invest (p,i,t):
     for j in range(1,t+1):
         p=p+(p*i)
