@@ -11,3 +11,4 @@ new_path=img/"image1.JPG"
 check=path/"file_1.txt"
 check.unlink(missing_ok=True)
 shutil.rmtree(path)
+shutil.copytree(#source,#dest)
